@@ -9,6 +9,8 @@ const resourceMiddleware = require('./middleware/resource')
 const jwtMiddleware = require('./middleware/jwtAuth')
 const errorMiddleware = require('./middleware/errorHandler')
 
+const { resourceRoute, adminRoute, uploadRoute } = require('./routes')
+
 const { root } = require('./config/base.config')
 
 const app = express()
@@ -31,6 +33,10 @@ app.use(
 )
 
 app.use(jwtMiddleware())
+
+app.use('/api/:resource', resourceMiddleware(), resourceRoute)
+app.use('/upload', uploadRoute)
+app.use('/admin', adminRoute)
 
 app.use((req, res, next) => {
   next(createError(404))
