@@ -1,4 +1,4 @@
-const { hostname, port } = require('../config')
+const { hostname, port } = require('../config/server.config')
 const app = require('../app')
 const http = require('http')
 const debug = require('debug')('server:server')

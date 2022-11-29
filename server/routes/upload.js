@@ -5,7 +5,7 @@ const multer = require('multer')
 const assert = require('http-assert')
 const createError = require('http-errors')
 
-const { uploadPath } = require('../config')
+const { uploadPath } = require('../config/base.config')
 
 const fieldMap = ['user', 'article', 'other']
 const storage = multer.diskStorage({
