@@ -1,3 +1,4 @@
+const db = require('./plugins/mongodb')
 const path = require('path')
 const cors = require('cors')
 const logger = require('morgan')
