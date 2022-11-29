@@ -5,6 +5,9 @@ const express = require('express')
 const createError = require('http-errors')
 const cookieParser = require('cookie-parser')
 
+const jwtMiddleware = require('./middleware/jwtAuth')
+const errorMiddleware = require('./middleware/errorHandler')
+
 const { root } = require('./config/base.config')
 
 const app = express()
@@ -25,6 +28,8 @@ app.use(
     allowedHeaders: 'Content-Type, X-Custom-Header, X-Requested-With, Authorization, Token'
   })
 )
+
+app.use(jwtMiddleware())
 
 app.use((req, res, next) => {
   next(createError(404))
