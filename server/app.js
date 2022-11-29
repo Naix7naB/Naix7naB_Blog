@@ -5,6 +5,7 @@ const express = require('express')
 const createError = require('http-errors')
 const cookieParser = require('cookie-parser')
 
+const resourceMiddleware = require('./middleware/resource')
 const jwtMiddleware = require('./middleware/jwtAuth')
 const errorMiddleware = require('./middleware/errorHandler')
 
