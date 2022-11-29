@@ -2,6 +2,7 @@ const fs = require('fs')
 const JWT = require('jsonwebtoken')
 const NodeRsa = require('node-rsa')
 
+const QueryMap = require('./queryMap')
 const { pubKeyPath, priKeyPath, algorithm, expiresIn } = require('../config/base.config')
 
 /**
@@ -60,9 +61,40 @@ function generateToken(payload, options = { algorithm, expiresIn }) {
   return token
 }
 
+/**
+ * @function: sendToken
+ * @return {JSON} 返回响应对象数据
+ * @description: 处理token并返回res
+ */
+function sendToken(payload, message) {
+  const { _id: uid, username, nickname, avatar, scope } = payload
+  const token = generateToken({ uid, username, nickname, scope })
+  return {
+    code: 10000,
+    message: message,
+    data: { uid, username, nickname, avatar, token }
+  }
+}
+
+/**
+ * @function: handleError
+ * @return {Error} 错误对象
+ * @description: 返回处理后的错误信息
+ */
+function handleError(err) {
+  if (err.message.indexOf('duplicate key error') !== -1) {
+    const repeatKey = Object.keys(err.keyPattern)[0]
+    return `${QueryMap[repeatKey]}已存在`
+  }
+  const errKey = Object.keys(err.errors)[0]
+  return err.errors[errKey].message
+}
+
 module.exports = {
   encrypt,
   decrypt,
   generateKeys,
-  generateToken
+  generateToken,
+  sendToken,
+  handleError
 }
