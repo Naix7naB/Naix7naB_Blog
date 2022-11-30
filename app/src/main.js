@@ -1,4 +1,4 @@
-import 'amfe-flexible'
+import '@/plugins/flexible'
 import '@/plugins/elementUI'
 import '@/plugins/fontAwesomeIcon'
 import '@/assets/scss/index.scss'
