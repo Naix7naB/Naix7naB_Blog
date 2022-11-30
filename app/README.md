@@ -29,3 +29,12 @@ pnpm run lint
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### 使用的库
+
+```
+vue2 vuex vue-router (vue2全家桶)
+element-ui (UI库)
+font-awesome-icon (图标库)
+amfe-flexible
+```
