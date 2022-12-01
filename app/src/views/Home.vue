@@ -1,17 +1,24 @@
 <template>
   <div class="home">
-    <Navigator />
-    <router-view></router-view>
+    <BlogHeader />
+    <BlogFooter />
   </div>
 </template>
 
 <script>
-import Navigator from '@/components/Navigator'
+import { BlogHeader, BlogFooter } from '@/components'
 
 export default {
   name: 'Home',
   components: {
-    Navigator
+    BlogHeader,
+    BlogFooter
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.home {
+  height: 1000px;
+}
+</style>
