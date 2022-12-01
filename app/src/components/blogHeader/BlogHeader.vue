@@ -56,6 +56,9 @@ export default {
 
 <style lang="scss" scoped>
 .blog-header {
+  z-index: 999;
+  position: sticky;
+  top: 0;
   padding: 1% 5%;
   box-shadow: 0 0 10px #333;
 

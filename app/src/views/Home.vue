@@ -19,6 +19,17 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  height: 1000px;
+  height: 10000px;
+
+  &:before {
+    content: '';
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    @include bg-image('@/assets/images/bg');
+  }
 }
 </style>
