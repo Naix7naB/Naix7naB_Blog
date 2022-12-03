@@ -4,7 +4,7 @@ module.exports = {
     'autoprefixer': {},
     'postcss-pxtorem': {
       rootValue: 75,
-      propList: ['*', '!font-size'],
+      propList: ['*', '!line-height', '!font-size'],
       replace: true,
       mediaQuery: true,
       exclude: /node_modules/i
