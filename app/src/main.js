@@ -1,6 +1,7 @@
 import '@/plugins/flexible'
 import '@/plugins/elementUI'
 import '@/plugins/fontAwesomeIcon'
+import '@/plugins/animate'
 import '@/assets/scss/index.scss'
 
 import Vue from 'vue'
