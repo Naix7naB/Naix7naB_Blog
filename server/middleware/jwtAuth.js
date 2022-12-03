@@ -10,6 +10,6 @@ module.exports = () => {
     requestProperty: 'auth',
     credentialsRequired: true
   }).unless({
-    path: [/^\/admin\/.*$/, /^\/api\/rest\/.*$/]
+    path: [/^\/admin\/.*$/, /^\/api\/.*$/]
   })
 }
