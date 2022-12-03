@@ -4,8 +4,16 @@ html {
   font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif,
     'Droid Sans Fallback';
   -webkit-tap-highlight-color: transparent;
-  background: $bg-theme-dark;
   color: $cl-text;
+  background: $bg-theme;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: $cl-text-l;
 }
 
 .g-relative {
