@@ -44,10 +44,10 @@ export default {
       margin: 0 10px;
       padding: 8px 10px;
       border-radius: 6px;
-      transition: 0.2s ease-in;
+      transition: 0.2s ease-out;
 
       &:hover {
-        background-color: rgba($color: #7f7f7f, $alpha: 0.3);
+        background-color: $bg-hover;
       }
 
       .blog-nav--title {

@@ -4,6 +4,12 @@ import Navigator from './components/navigator/Navigator'
 export default {
   name: 'BlogHeader',
   components: { Navigator },
+  props: {
+    headerStyle: {
+      type: Object,
+      default: null
+    }
+  },
   data() {
     return {
       routes: [
@@ -39,7 +45,7 @@ export default {
 </script>
 
 <template>
-  <header class="blog-header">
+  <header class="blog-header" :style="headerStyle">
     <el-row class="blog-header--wrap">
       <el-col class="blog-logo" tag="h1" :span="8">
         <a href="javascript:;">
@@ -57,10 +63,10 @@ export default {
 <style lang="scss" scoped>
 .blog-header {
   z-index: 999;
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   padding: 1% 5%;
-  box-shadow: 0 0 10px #333;
 
   .blog-header--wrap {
     display: flex;
