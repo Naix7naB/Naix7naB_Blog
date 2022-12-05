@@ -62,7 +62,7 @@ export default {
   transition: 0.5s ease-in;
 
   &.open {
-    background-color: rgba($color: #7f7f7f, $alpha: 0.3);
+    background-color: $bg-theme-d;
   }
 
   .blog-search--input {
@@ -71,7 +71,7 @@ export default {
     height: 44px;
     padding: 0;
     color: #fff;
-    font-size: $fz-medium;
+    font-size: $fz-small;
     background-color: transparent;
     transition: 0.5s cubic-bezier(0.4, 0, 0, 1);
 
@@ -93,7 +93,7 @@ export default {
     }
 
     [class^='blog-icon-'] {
-      color: #fff;
+      color: $cl-text;
       cursor: pointer;
     }
   }
