@@ -11,26 +11,37 @@ export default {
     BlogBanner,
     BlogFooter
   },
-  data(){
+  data() {
     return {
       defaultBgc: bgImage,
       scrollY: 0
     }
   },
-  methods:{
+  methods: {
     onScroll(vertical) {
       this.scrollY = vertical.scrollTop
+    },
+    scrollTo({ target, duration = 1000 }) {
+      if (!this.$refs[target]) return false
+      const offsetY = this.$refs[target].$el.offsetTop
+      this.$refs.scrollRef.scrollTo({ y: offsetY }, duration, 'easeOutCubic')
     }
+  },
+  mounted() {
+    this.$bus.$on('scrollTo', this.scrollTo)
+  },
+  beforeDestroy() {
+    this.$refs.scrollRef.stop()
   }
 }
 </script>
 
 <template>
   <div class="home" :style="{ backgroundImage: `url(${defaultBgc})` }">
-    <VueScroll @handle-scroll="onScroll">
+    <VueScroll ref="scrollRef" @handle-scroll="onScroll">
       <BlogHeader :scrollY="scrollY" />
       <BlogBanner />
-      <BlogFooter style="height: 10000px;" />
+      <BlogFooter ref="footer" style="height: 10000px;" />
     </VueScroll>
   </div>
 </template>
