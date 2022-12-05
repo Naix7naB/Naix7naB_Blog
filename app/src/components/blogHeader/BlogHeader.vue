@@ -5,13 +5,14 @@ export default {
   name: 'BlogHeader',
   components: { Navigator },
   props: {
-    headerStyle: {
-      type: Object,
-      default: null
+    scrollY: {
+      type: Number,
+      default: 0
     }
   },
   data() {
     return {
+      maxTransY: 1200,
       routes: [
         {
           name: 'Home',
@@ -39,6 +40,22 @@ export default {
           icon: 'user'
         }
       ]
+    }
+  },
+  computed: {
+    headerStyle() {
+      let blurCount = 0, bgColor = 'transparent', shadow = 'none'
+      let ratio = Math.min(this.scrollY / this.maxTransY * 100, 100) / 100
+      if (this.scrollY > 0) {
+        blurCount = Math.min(this.scrollY / 50, 20)
+        bgColor = `rgba(64, 64, 64, ${Math.min(ratio, .7)})`
+        shadow = `0 1px 20px rgba(51, 51, 51, ${Math.min(ratio, .7)})`
+      }
+      return {
+        backgroundColor: bgColor,
+        boxShadow: shadow,
+        backdropFilter: `blur(${blurCount}px)`
+      }
     }
   }
 }
