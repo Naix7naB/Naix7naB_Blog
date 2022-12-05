@@ -56,13 +56,13 @@ export default {
   justify-content: center;
   align-items: center;
   margin-left: auto;
-  margin-right: 30px;
+  margin-right: 12px;
   border-radius: 8px;
   background-color: transparent;
   transition: 0.5s ease-in;
 
   &.open {
-    background-color: $bg-theme-d;
+    background-color: $bg-theme-ll;
   }
 
   .blog-search--input {
@@ -70,14 +70,14 @@ export default {
     width: 0;
     height: 44px;
     padding: 0;
-    color: #fff;
+    color: $cl-theme;
     font-size: $fz-small;
     background-color: transparent;
     transition: 0.5s cubic-bezier(0.4, 0, 0, 1);
 
     &.active {
       width: 200px;
-      padding: 10px 10px 10px 0;
+      padding: 10PX 10PX 10PX 0;
     }
   }
 
@@ -89,12 +89,12 @@ export default {
       position: absolute;
       top: 0;
       bottom: 0;
-      right: 10px;
+      right: 10PX;
     }
 
     [class^='blog-icon-'] {
       color: $cl-text;
-      cursor: pointer;
+      @include pointer();
     }
   }
 

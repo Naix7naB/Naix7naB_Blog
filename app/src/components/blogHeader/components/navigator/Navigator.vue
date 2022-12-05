@@ -18,10 +18,8 @@ export default {
     <SearchBar />
     <ul class="blog-nav--list hidden-xs-only">
       <li class="blog-nav--item" v-for="item in list" :key="item.name">
-        <a href="javascript:;">
-          <font-awesome-icon :icon="['fa-solid', `fa-${item.icon}`]" />
-          <span class="blog-nav--title">{{item.title}}</span>
-        </a>
+        <font-awesome-icon :icon="['fa-solid', `fa-${item.icon}`]" />
+        <span class="blog-nav--title">{{item.title}}</span>
       </li>
     </ul>
     <div class="hidden-sm-and-up">
@@ -34,6 +32,7 @@ export default {
 .blog-navigator {
   display: flex;
   align-items: center;
+  height: 100%;
 
   .blog-nav--list {
     display: flex;
@@ -41,17 +40,18 @@ export default {
     font-size: $fz-medium;
 
     .blog-nav--item {
-      margin: 0 10px;
-      padding: 8px 10px;
+      margin: 0 4px;
+      padding: 8PX 10PX;
       border-radius: 6px;
-      transition: 0.2s ease-out;
+      transition: 0.2s ease-in;
 
       &:hover {
-        background-color: $bg-hover;
+        @include pointer();
+        background-color: $bg-theme-ll;
       }
 
       .blog-nav--title {
-        margin-left: 4px;
+        margin-left: 4PX;
       }
     }
   }
