@@ -36,7 +36,7 @@ export default {
       <font-awesome-icon class="blog-icon--right" icon="fa-solid fa-quote-right" size="lg" />
     </p>
     <p class="blog-info--item">
-      <span>{{ introPhrase }}</span>
+      <span class="blog-intro--txt">{{ introPhrase }}</span>
     </p>
   </div>
 </template>
@@ -62,6 +62,15 @@ export default {
 
     .blog-icon--right {
       padding-left: 4PX;
+    }
+
+    .blog-intro--txt {
+      text-decoration: underline;
+      transition: .3s ease-out;
+
+      &:hover {
+        color: #89b6ff;
+      }
     }
   }
 }
