@@ -32,7 +32,7 @@ export default {
     <p class="blog-info--item">
       <font-awesome-icon class="blog-icon--left" icon="fa-solid fa-quote-left" size="lg" />
       <span>{{ quotesPhrase }}</span>
-      <span class="animate__animated animate__infinite  animate__flash animate__slow">|</span>
+      <font-awesome-icon icon="fa-solid fa-window-minimize" fade />
       <font-awesome-icon class="blog-icon--right" icon="fa-solid fa-quote-right" size="lg" />
     </p>
     <p class="blog-info--item">
@@ -65,7 +65,6 @@ export default {
     }
 
     .blog-intro--txt {
-      text-decoration: underline;
       transition: .3s ease-out;
 
       &:hover {

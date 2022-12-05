@@ -7,9 +7,14 @@ export default {
 </script>
 
 <template>
-  <div class="blog-banner--pulldown">
-    <button><font-awesome-icon icon="fa-solid fa-caret-down" /></button>
-  </div>
+  <button class="blog-banner--pulldown">
+    <font-awesome-icon
+      bounce
+      size="3x"
+      icon="fa-solid fa-caret-down"
+      :style="{'--fa-animation-duration': '2s'}"
+    />
+  </button>
 </template>
 
 <style lang="scss" scoped>
@@ -17,10 +22,10 @@ export default {
   position: absolute;
   bottom: 60PX;
   left: 50%;
-  width: 100PX;
-  height: 80PX;
-  border-radius: 16PX;
-  background-color: $bg-theme-d;
+  padding: 10PX;
+  color: $cl-emb;
+  background-color: transparent;
   transform: translateX(-50%);
+  @include pointer();
 }
 </style>
