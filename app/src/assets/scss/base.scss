@@ -20,12 +20,22 @@ html {
   position: relative;
 }
 
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s;
+}
+
 .slide-enter-active,
 .slide-leave-active {
   transition: all 0.3s;
 }
 
-.slide-enter-from,
+.slide-enter,
 .slide-leave-to {
   transform: translate3d(100%, 0, 0);
 }
@@ -35,7 +45,7 @@ html {
   transition: all 0.3s;
 }
 
-.list-enter-from,
+.list-enter,
 .list-leave-to {
   height: 0 !important;
 }

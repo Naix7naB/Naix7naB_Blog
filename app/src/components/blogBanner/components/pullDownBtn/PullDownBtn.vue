@@ -1,8 +1,6 @@
 <script>
 export default {
-  data() {
-    return {}
-  },
+  name: 'PullDownBtn',
   methods: {
     pullDown() {
       this.$bus.$emit('scrollTo', { target: 'footer' })
