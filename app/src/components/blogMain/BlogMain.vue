@@ -15,20 +15,22 @@ export default {
 </script>
 
 <template>
-  <el-row class="blog-main" tag="section">
-    <el-col class="hidden-xs-only" tag="aside" :span="6">
-      <AsideBar />
-    </el-col>
-    <el-col tag="main" :span="17" :offset="1">
-      <ContentArea />
-    </el-col>
-  </el-row>
+  <section class="blog-main">
+    <el-row :gutter="20">
+      <el-col class="hidden-xs-only" tag="aside" :span="8">
+        <AsideBar />
+      </el-col>
+      <el-col tag="main" :xs="24" :sm="16">
+        <ContentArea />
+      </el-col>
+    </el-row>
+  </section>
 </template>
 
 <style lang="scss" scoped>
 .blog-main {
   max-width: 1350PX;
   margin: 0 auto;
-  padding: 0 3%;
+  padding: 0 30PX;
 }
 </style>

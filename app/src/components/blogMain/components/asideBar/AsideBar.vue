@@ -5,7 +5,13 @@ export default {
 </script>
 
 <template>
-  <div>Aside Bar</div>
+  <el-card class="blog-main--aside">Aside Bar</el-card>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.blog-main--aside {
+  height: 500PX;
+  border: none;
+  border-radius: 10px;
+}
+</style>
