@@ -25,10 +25,10 @@ export default {
 
 <style lang="scss" scoped>
 .blog-banner--infocard {
-  position: absolute;
+  position: relative;
   top: 50%;
-  left: 50%;
-  min-width: 800PX;
-  transform: translate(-50%, -50%);
+  max-width: 800PX;
+  margin: auto;
+  transform: translateY(-50%);
 }
 </style>

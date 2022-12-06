@@ -45,8 +45,8 @@ export default {
 .blog-banner--info {
   width: 63%;
   margin: 32PX auto 40PX;
-  padding: 18PX;
-  border-radius: 15PX;
+  padding: 20PX;
+  border-radius: 12PX;
   backdrop-filter: blur(10PX);
   background-color: $bg-theme-ll;
 
@@ -68,7 +68,7 @@ export default {
       transition: .3s ease-out;
 
       &:hover {
-        color: #89b6ff;
+        color: $cl-hover;
       }
     }
   }
