@@ -37,7 +37,7 @@ export default {
     border: 6PX solid $bg-gray-ll;
     border-radius: 50%;
     box-shadow: 0 0 20PX $bg-theme;
-    transition: transform 1s cubic-bezier(.44, -1.1, .63, 1.61);
+    transition: transform .8s ease;
 
     &:hover {
       @include pointer();
