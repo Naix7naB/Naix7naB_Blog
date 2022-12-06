@@ -39,19 +39,24 @@ export default {
     }
   },
   computed: {
-    ...mapState(['scrollY', 'maxTransY']),
+    ...mapState(['isDown', 'scrollY', 'maxTransY']),
     headerStyle() {
-      let blurCount = 0, bgColor = 'transparent', shadow = 'none'
+      let blurCount = 0, bgColor = 'transparent', shadow = 'none', transform = 'none'
       let ratio = Math.min(this.scrollY / this.maxTransY * 100, 100) / 100
       if (this.scrollY > 0) {
         blurCount = Math.min(this.scrollY / 50, 20)
         bgColor = `rgba(57, 57, 57, ${Math.min(ratio, .7)})`
         shadow = `0 2px 20px rgba(57, 57, 57, ${Math.min(ratio, .7)})`
       }
+      if (this.scrollY > this.maxTransY && this.isDown) {
+        const headerHeight = this.$refs.headerRef.clientHeight
+        transform = `translate3d(0, ${-headerHeight}px, 1px)`
+      }
       return {
         backgroundColor: bgColor,
         boxShadow: shadow,
-        backdropFilter: `blur(${blurCount}px)`
+        backdropFilter: `blur(${blurCount}px)`,
+        transform: transform
       }
     }
   }
@@ -59,7 +64,7 @@ export default {
 </script>
 
 <template>
-  <header class="blog-header" :style="headerStyle">
+  <header class="blog-header" ref="headerRef" :style="headerStyle">
     <el-row class="blog-header--wrap">
       <el-col class="blog-logo" tag="h1" :span="8">
         <a href="javascript:;">
@@ -82,6 +87,7 @@ export default {
   width: 100%;
   height: 80PX;
   padding: 1% 5%;
+  transition: transform .5s;
 
   .blog-header--wrap {
     display: flex;

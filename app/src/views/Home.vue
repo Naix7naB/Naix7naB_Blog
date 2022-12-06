@@ -1,5 +1,5 @@
 <script>
-import { BlogHeader, BlogBanner, BlogFooter } from '@/components'
+import { BlogHeader, BlogBanner, BlogMain, BlogFooter } from '@/components'
 
 // TODO 背景图片从后端请求
 import bgImage from '@/assets/images/bg.png'
@@ -9,6 +9,7 @@ export default {
   components: {
     BlogHeader,
     BlogBanner,
+    BlogMain,
     BlogFooter
   },
   data() {
@@ -20,10 +21,8 @@ export default {
     onScroll(vertical) {
       this.$store.dispatch('scroll/setScrollY', vertical.scrollTop)
     },
-    scrollTo({ target, duration = 1000 }) {
-      if (!this.$refs[target]) return false
-      const offsetY = this.$refs[target].$el.offsetTop
-      this.$refs.scrollRef.scrollTo({ y: offsetY }, duration, 'easeOutCubic')
+    scrollTo({ offset, duration = 1000 }) {
+      this.$refs.scrollRef.scrollTo({ y: offset }, duration, 'easeOutCubic')
     }
   },
   mounted() {
@@ -40,6 +39,7 @@ export default {
     <VueScroll ref="scrollRef" @handle-scroll="onScroll">
       <BlogHeader />
       <BlogBanner />
+      <BlogMain />
       <BlogFooter ref="footer" style="height: 10000px;" />
     </VueScroll>
   </div>

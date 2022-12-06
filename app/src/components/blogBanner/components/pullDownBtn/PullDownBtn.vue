@@ -3,7 +3,8 @@ export default {
   name: 'PullDownBtn',
   methods: {
     pullDown() {
-      this.$bus.$emit('scrollTo', { target: 'footer' })
+      const offset = this.$parent.$el.clientHeight
+      this.$bus.$emit('scrollTo', { offset })
     }
   }
 }
