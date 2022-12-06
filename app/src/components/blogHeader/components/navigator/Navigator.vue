@@ -42,7 +42,7 @@ export default {
     .blog-nav--item {
       margin: 0 4px;
       padding: 8PX 10PX;
-      border-radius: 6px;
+      border-radius: 6PX;
       transition: 0.2s ease-in;
 
       &:hover {
