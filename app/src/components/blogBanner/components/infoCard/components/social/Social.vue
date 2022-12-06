@@ -59,7 +59,7 @@ export default {
       height: 50PX;
       padding: 10PX;
       border-radius: 15PX;
-      background-color: rgba($color: #aaa, $alpha: .8);
+      background-color: $bg-reverse-l;
     }
   }
 }

@@ -32,12 +32,17 @@ export default {
   text-align: center;
 
   .blog-avatar--pic {
-    @include pointer();
     width: 130PX;
     height: 130PX;
-    border: 6PX solid #515151;
+    border: 6PX solid $bg-gray-ll;
     border-radius: 50%;
-    box-shadow: 0 0 20PX #333;
+    box-shadow: 0 0 20PX $bg-theme;
+    transition: transform 1s cubic-bezier(.44, -1.1, .63, 1.61);
+
+    &:hover {
+      @include pointer();
+      transform: rotate(360deg);
+    }
   }
 }
 </style>

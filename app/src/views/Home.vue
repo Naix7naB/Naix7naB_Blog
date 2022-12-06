@@ -60,7 +60,7 @@ export default {
   &:before {
     @include full-fixed();
     content: '';
-    background-color: rgba($color: #000, $alpha: .3);
+    background-color: $bg-theme-d;
   }
 }
 </style>

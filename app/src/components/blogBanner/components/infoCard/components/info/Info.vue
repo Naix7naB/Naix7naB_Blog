@@ -48,7 +48,7 @@ export default {
   padding: 18PX;
   border-radius: 15PX;
   backdrop-filter: blur(10PX);
-  background-color: $bg-theme-l;
+  background-color: $bg-theme-ll;
 
   .blog-info--item {
     line-height: $lh-large;
