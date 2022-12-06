@@ -67,9 +67,11 @@ export default {
   <header class="blog-header" ref="headerRef" :style="headerStyle">
     <el-row class="blog-header--wrap">
       <el-col class="blog-logo" tag="h1" :span="8">
-        <a href="javascript:;">
-          <font-awesome-icon icon="fa-solid fa-blog" />
-          <span class="blog-logo--title">&#35;7x Blog</span>
+        <a class="blog-site--name" href="javascript:;">
+          <font-awesome-icon
+            icon="fa-solid fa-blog"
+            :style="{ marginRight: '4px' }"
+          />&#35;7x&#180;s Blog
         </a>
       </el-col>
       <el-col :span="16">
@@ -96,11 +98,6 @@ export default {
 
     .blog-logo {
       font-size: 32PX;
-
-      .blog-logo--title {
-        margin-left: 10PX;
-        font-family: kanit;
-      }
     }
   }
 }
