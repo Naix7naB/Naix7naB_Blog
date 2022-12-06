@@ -31,7 +31,7 @@ export default {
 </script>
 
 <template>
-  <div :class="['blog-nav--search', { open: isExtend }]">
+  <div :class="['blog-nav--search', 'g-relative', { open: isExtend }]">
     <button class="blog-search--btn" @click="extendInput">
       <font-awesome-icon class="blog-icon--search" icon="fa-solid fa-search" size="xl" />
     </button>
@@ -51,7 +51,6 @@ export default {
 
 <style lang="scss" scoped>
 .blog-nav--search {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
