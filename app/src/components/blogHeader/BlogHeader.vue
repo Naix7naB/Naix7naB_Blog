@@ -1,18 +1,14 @@
 <script>
+import { createNamespacedHelpers } from 'vuex'
+const { mapState } = createNamespacedHelpers('scroll')
+
 import Navigator from './components/navigator/Navigator'
 
 export default {
   name: 'BlogHeader',
   components: { Navigator },
-  props: {
-    scrollY: {
-      type: Number,
-      default: 0
-    }
-  },
   data() {
     return {
-      maxTransY: 1000,
       routes: [
         {
           name: 'Home',
@@ -43,6 +39,7 @@ export default {
     }
   },
   computed: {
+    ...mapState(['scrollY', 'maxTransY']),
     headerStyle() {
       let blurCount = 0, bgColor = 'transparent', shadow = 'none'
       let ratio = Math.min(this.scrollY / this.maxTransY * 100, 100) / 100

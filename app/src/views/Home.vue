@@ -13,13 +13,12 @@ export default {
   },
   data() {
     return {
-      defaultBgc: bgImage,
-      scrollY: 0
+      defaultBgc: bgImage
     }
   },
   methods: {
     onScroll(vertical) {
-      this.scrollY = vertical.scrollTop
+      this.$store.dispatch('scroll/setScrollY', vertical.scrollTop)
     },
     scrollTo({ target, duration = 1000 }) {
       if (!this.$refs[target]) return false
@@ -39,7 +38,7 @@ export default {
 <template>
   <div class="home" :style="{ backgroundImage: `url(${defaultBgc})` }">
     <VueScroll ref="scrollRef" @handle-scroll="onScroll">
-      <BlogHeader :scrollY="scrollY" />
+      <BlogHeader />
       <BlogBanner />
       <BlogFooter ref="footer" style="height: 10000px;" />
     </VueScroll>

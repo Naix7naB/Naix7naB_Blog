@@ -1,4 +1,7 @@
 <script>
+import { createNamespacedHelpers } from 'vuex'
+const { mapState } = createNamespacedHelpers('scroll')
+
 import InfoCard from './components/infoCard/InfoCard'
 import PullDownBtn from './components/pullDownBtn/PullDownBtn'
 
@@ -7,22 +10,23 @@ export default {
     InfoCard,
     PullDownBtn
   },
-  data() {
-    return {}
+  computed: {
+    ...mapState(['scrollY'])
   }
 }
 </script>
 
 <template>
-  <section class="blog-banner">
+  <section class="blog-banner g-relative">
     <InfoCard />
-    <PullDownBtn />
+    <transition name="fade">
+      <PullDownBtn v-if="scrollY < 400" />
+    </transition>
   </section>
 </template>
 
 <style lang="scss" scoped>
 .blog-banner {
-  position: relative;
   height: 100vh;
 }
 </style>
