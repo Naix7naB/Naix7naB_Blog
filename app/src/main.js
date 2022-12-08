@@ -1,5 +1,4 @@
 import '@/plugins/flexible'
-import '@/plugins/vuescroll'
 import '@/plugins/elementUI'
 import '@/plugins/fontAwesomeIcon'
 import '@/plugins/animate'

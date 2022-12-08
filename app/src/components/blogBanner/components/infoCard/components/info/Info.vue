@@ -42,7 +42,7 @@ export default {
 .blog-banner--info {
   width: 63%;
   margin: 32PX auto 40PX;
-  padding: 20PX;
+  padding: 28PX 20PX;
   text-align: center;
   border-radius: 12PX;
   backdrop-filter: blur(10PX);

@@ -1,5 +1,5 @@
 <script>
-import { BlogHeader, BlogBanner, BlogMain, BlogFooter } from '@/components'
+import { BlogHeader, BlogBanner, BlogMain, BlogFooter, Scroll } from '@/components'
 
 // TODO 背景图片从后端请求
 import bgImage from '@/assets/images/bg.png'
@@ -10,46 +10,29 @@ export default {
     BlogHeader,
     BlogBanner,
     BlogMain,
-    BlogFooter
+    BlogFooter,
+    Scroll
   },
   data() {
     return {
       defaultBgc: bgImage
     }
-  },
-  methods: {
-    onScroll(vertical) {
-      this.$store.dispatch('scroll/setScrollY', vertical.scrollTop)
-    },
-    scrollTo({ offset, duration = 1000 }) {
-      this.$refs.scrollRef.scrollTo({ y: offset }, duration, 'easeOutCubic')
-    }
-  },
-  mounted() {
-    this.$bus.$on('scrollTo', this.scrollTo)
-  },
-  beforeDestroy() {
-    this.$refs.scrollRef.stop()
   }
 }
 </script>
 
 <template>
   <div class="home" :style="{ backgroundImage: `url(${defaultBgc})` }">
-    <VueScroll ref="scrollRef" @handle-scroll="onScroll">
+    <Scroll>
       <BlogHeader />
       <BlogBanner />
       <BlogMain />
-      <BlogFooter ref="footer" style="height: 10000px;" />
-    </VueScroll>
+      <BlogFooter />
+    </Scroll>
   </div>
 </template>
 
 <style lang="scss" scoped>
-:deep(.__vuescroll .__rail-is-vertical) {
-  z-index: 1000 !important;
-}
-
 .home {
   height: 100vh;
   background-repeat: no-repeat;
