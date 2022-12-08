@@ -65,19 +65,13 @@ export default {
 
 <template>
   <header class="blog-header" ref="headerRef" :style="headerStyle">
-    <el-row class="blog-header--wrap">
-      <el-col class="blog-logo" tag="h1" :span="8">
-        <a class="blog-site--name" href="javascript:;">
-          <font-awesome-icon
-            icon="fa-solid fa-blog"
-            :style="{ marginRight: '4px' }"
-          />&#35;7x&#180;s Blog
-        </a>
-      </el-col>
-      <el-col :span="16">
-        <Navigator :list="routes" />
-      </el-col>
-    </el-row>
+    <h1 class="blog-logo">
+      <a class="blog-site--name" href="javascript:;">
+        <font-awesome-icon icon="fa-solid fa-blog" :style="{ marginRight: '4px' }" />&#35;7x&#180;s
+        Blog
+      </a>
+    </h1>
+    <Navigator :list="routes" />
   </header>
 </template>
 
@@ -85,20 +79,18 @@ export default {
 .blog-header {
   z-index: 999;
   position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   top: 0;
   width: 100%;
   height: 80PX;
   padding: 1% 5%;
   transition: transform .5s;
 
-  .blog-header--wrap {
-    display: flex;
-    align-items: center;
-    height: 100%;
-
-    .blog-logo {
-      font-size: 32PX;
-    }
+  .blog-site--name {
+    font-size: 32PX;
+    vertical-align: 8PX;
   }
 }
 </style>
