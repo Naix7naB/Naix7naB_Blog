@@ -1,18 +1,18 @@
 <script>
-import { mapState } from 'vuex'
+import Profile from './components/profile/Profile'
 
 export default {
   name: 'AsideBar',
-  computed: {
-    ...mapState(['defaultAvatar'])
+  components: {
+    Profile
   }
 }
 </script>
 
 <template>
-  <el-card class="blog-main--aside">
-    <el-image fit="cover" :src="defaultAvatar" />
-  </el-card>
+  <div class="blog-main--aide">
+    <Profile />
+  </div>
 </template>
 
 <style lang="scss" scoped>
