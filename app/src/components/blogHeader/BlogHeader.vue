@@ -1,12 +1,13 @@
 <script>
+import Navigator from './components/navigator/Navigator'
+import Menu from './components/menu/Menu'
+
 import { createNamespacedHelpers } from 'vuex'
 const { mapState } = createNamespacedHelpers('scroll')
 
-import Navigator from './components/navigator/Navigator'
-
 export default {
   name: 'BlogHeader',
-  components: { Navigator },
+  components: { Navigator, Menu },
   data() {
     return {
       routes: [
@@ -65,12 +66,7 @@ export default {
 
 <template>
   <header class="blog-header" ref="headerRef" :style="headerStyle">
-    <h1 class="blog-logo">
-      <a class="blog-site--name" href="javascript:;">
-        <font-awesome-icon icon="fa-solid fa-blog" :style="{ marginRight: '4px' }" />&#35;7x&#180;s
-        Blog
-      </a>
-    </h1>
+    <Menu />
     <Navigator :list="routes" />
   </header>
 </template>
@@ -81,16 +77,10 @@ export default {
   position: fixed;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   top: 0;
   width: 100%;
   height: 80PX;
   padding: 1% 5%;
   transition: transform .5s;
-
-  .blog-site--name {
-    font-size: 32PX;
-    vertical-align: 8PX;
-  }
 }
 </style>

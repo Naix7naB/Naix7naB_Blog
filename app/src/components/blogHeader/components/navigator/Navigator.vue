@@ -22,9 +22,6 @@ export default {
         <span class="blog-nav--title">{{item.title}}</span>
       </li>
     </ul>
-    <div class="hidden-sm-and-up">
-      <font-awesome-icon icon="fa-solid fa-minus" />
-    </div>
   </nav>
 </template>
 

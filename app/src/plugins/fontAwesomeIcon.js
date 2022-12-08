@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // 按需引入图标
 import {
   faBlog,
+  faBars,
   faHome,
   faUser,
   faTag,
@@ -24,34 +25,31 @@ import {
   faImages,
   faXmark,
   faClock,
-  faGear,
-  faPen,
-  faMinus
+  faPen
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add([
   faBlog,
+  faBars,
   faHome,
   faUser,
-  faTag,
-  faHashtag,
+  faTag, // not_use
+  faHashtag, // not_use
   faSearch,
   faComments,
   faCircleInfo,
-  faLocationDot,
+  faLocationDot, // not_use
   faQuoteLeft,
   faQuoteRight,
-  faPaperPlane,
-  faCaretUp,
+  faPaperPlane, // not_use
+  faCaretUp, // not_use
   faCaretDown,
   faWindowMinimize,
-  faImage,
+  faImage, // not_use
   faImages,
   faXmark,
   faClock,
-  faGear,
-  faPen,
-  faMinus
+  faPen // not_use
 ])
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

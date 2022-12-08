@@ -54,9 +54,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
   margin-right: 12px;
-  border-radius: 8px;
+  border-radius: 8PX;
   background-color: transparent;
   transition: 0.5s ease-in;
 
@@ -67,7 +66,7 @@ export default {
   .blog-search--input {
     box-sizing: border-box;
     width: 0;
-    height: 44px;
+    height: 44PX;
     padding: 0;
     color: $cl-theme;
     font-size: $fz-small;
@@ -90,19 +89,14 @@ export default {
       bottom: 0;
       right: 10PX;
     }
-
-    [class^='blog-icon-'] {
-      color: $cl-text;
-      @include pointer();
-    }
   }
 
   .blog-icon--search {
-    padding: 12px;
+    padding: 12PX;
   }
 
   .blog-icon--clear {
-    padding: 4px;
+    padding: 4PX;
   }
 }
 </style>

@@ -12,6 +12,11 @@ html {
   box-sizing: border-box;
 }
 
+[data-prefix='fas'] {
+  color: $cl-text;
+  @include pointer();
+}
+
 .blog-site--name {
   font-family: kanit;
   font-weight: 700;
