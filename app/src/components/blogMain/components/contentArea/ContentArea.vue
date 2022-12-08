@@ -15,7 +15,7 @@ export default {
 <style lang="scss" scoped>
 .blog-main--content {
   .blog-content--item ~ .blog-content--item {
-    margin-top: 20PX;
+    margin-top: 30PX;
   }
 
   .blog-content--item {

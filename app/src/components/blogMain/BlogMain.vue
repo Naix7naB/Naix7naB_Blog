@@ -25,9 +25,17 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+:deep(.el-card) {
+  color: $cl-theme;
+  border: none;
+  border-radius: 10PX;
+  background-color: $bg-sub-theme;
+  box-shadow: 1PX 4PX 16PX rgba($color: #435672, $alpha: .5);
+}
+
 .blog-main {
   max-width: 1350PX;
   margin: 0 auto;
-  padding: 0 30PX;
+  padding: 30PX;
 }
 </style>
