@@ -1,11 +1,18 @@
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  name: 'AsideBar'
+  name: 'AsideBar',
+  computed: {
+    ...mapState(['defaultAvatar'])
+  }
 }
 </script>
 
 <template>
-  <el-card class="blog-main--aside">Aside Bar</el-card>
+  <el-card class="blog-main--aside">
+    <el-image fit="cover" :src="defaultAvatar" />
+  </el-card>
 </template>
 
 <style lang="scss" scoped>

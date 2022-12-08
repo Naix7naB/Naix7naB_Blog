@@ -1,8 +1,7 @@
 <script>
 import { BlogHeader, BlogBanner, BlogMain, BlogFooter, Scroll } from '@/components'
 
-// TODO 背景图片从后端请求
-import bgImage from '@/assets/images/bg.png'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
@@ -13,16 +12,14 @@ export default {
     BlogFooter,
     Scroll
   },
-  data() {
-    return {
-      defaultBgc: bgImage
-    }
+  computed: {
+    ...mapGetters(['bgStyle'])
   }
 }
 </script>
 
 <template>
-  <div class="home" :style="{ backgroundImage: `url(${defaultBgc})` }">
+  <div class="home" :style="bgStyle">
     <Scroll>
       <BlogHeader />
       <BlogBanner />

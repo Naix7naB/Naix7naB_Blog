@@ -1,11 +1,9 @@
 <script>
-import avatarPic from '@/assets/images/avatar-default.png'
+import { mapState } from 'vuex'
 
 export default {
-  data() {
-    return {
-      defaultAvatar: avatarPic
-    }
+  computed: {
+    ...mapState(['defaultAvatar'])
   },
   methods: {
     goHome() {

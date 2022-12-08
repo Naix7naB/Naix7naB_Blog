@@ -7,9 +7,6 @@ export default {
   components: {
     AsideBar,
     ContentArea
-  },
-  data() {
-    return {}
   }
 }
 </script>
